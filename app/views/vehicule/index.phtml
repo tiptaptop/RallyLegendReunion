@@ -1,0 +1,70 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="page-header">
+    <h1>
+        Search vehicule
+    </h1>
+    <p>
+        <?php echo $this->tag->linkTo(["vehicule/new", "Create vehicule"]) ?>
+    </p>
+</div>
+
+<?php echo $this->getContent() ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "vehicule/search",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldIdvoiture" class="col-sm-2 control-label">Idvoiture</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["idvoiture", "type" => "number", "class" => "form-control", "id" => "fieldIdvoiture"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldAnnee" class="col-sm-2 control-label">Annee</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["annee", "size" => 30, "class" => "form-control", "id" => "fieldAnnee"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldMarque" class="col-sm-2 control-label">Marque</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["marque", "size" => 30, "class" => "form-control", "id" => "fieldMarque"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldModele" class="col-sm-2 control-label">Modele</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["modele", "size" => 30, "class" => "form-control", "id" => "fieldModele"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldNombrederoues" class="col-sm-2 control-label">NombreDeRoues</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["nombreDeRoues", "type" => "number", "class" => "form-control", "id" => "fieldNombrederoues"]) ?>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <?php echo $this->tag->submitButton(["Search", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>

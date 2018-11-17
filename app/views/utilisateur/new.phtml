@@ -1,0 +1,110 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="row">
+    <nav>
+        <ul class="pager">
+            <li class="previous"><?php echo $this->tag->linkTo(["utilisateur", "Go Back"]) ?></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="page-header">
+    <h1>
+        Create utilisateur
+    </h1>
+</div>
+
+<?php echo $this->getContent(); ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "utilisateur/create",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldIdutilisateur" class="col-sm-2 control-label">Idutilisateur</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["idutilisateur", "type" => "number", "class" => "form-control", "id" => "fieldIdutilisateur"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldNom" class="col-sm-2 control-label">Nom</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["nom", "size" => 30, "class" => "form-control", "id" => "fieldNom"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldPrenom" class="col-sm-2 control-label">Prenom</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["prenom", "size" => 30, "class" => "form-control", "id" => "fieldPrenom"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldStatut" class="col-sm-2 control-label">Statut</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["statut", "size" => 30, "class" => "form-control", "id" => "fieldStatut"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldMail" class="col-sm-2 control-label">Mail</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["mail", "size" => 30, "class" => "form-control", "id" => "fieldMail"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldPseudo" class="col-sm-2 control-label">Pseudo</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["pseudo", "size" => 30, "class" => "form-control", "id" => "fieldPseudo"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldSignature" class="col-sm-2 control-label">Signature</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["signature", "size" => 30, "class" => "form-control", "id" => "fieldSignature"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldMotdepasse" class="col-sm-2 control-label">MotDePasse</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["motDePasse", "size" => 30, "class" => "form-control", "id" => "fieldMotdepasse"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldPhoto" class="col-sm-2 control-label">Photo</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["photo", "size" => 30, "class" => "form-control", "id" => "fieldPhoto"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldIdVoiture" class="col-sm-2 control-label">Id Of Voiture</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["id_voiture", "type" => "number", "class" => "form-control", "id" => "fieldIdVoiture"]) ?>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <?php echo $this->tag->submitButton(["Save", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>

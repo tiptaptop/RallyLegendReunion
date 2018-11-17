@@ -1,0 +1,68 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="row">
+    <nav>
+        <ul class="pager">
+            <li class="previous"><?php echo $this->tag->linkTo(["poste", "Go Back"]) ?></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="page-header">
+    <h1>
+        Create poste
+    </h1>
+</div>
+
+<?php echo $this->getContent(); ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "poste/create",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldIdposte" class="col-sm-2 control-label">Idposte</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["idposte", "type" => "number", "class" => "form-control", "id" => "fieldIdposte"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldIdUtilisateur" class="col-sm-2 control-label">Id Of Utilisateur</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["id_utilisateur", "type" => "number", "class" => "form-control", "id" => "fieldIdUtilisateur"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldIdVehicule" class="col-sm-2 control-label">Id Of Vehicule</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["id_vehicule", "type" => "number", "class" => "form-control", "id" => "fieldIdVehicule"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldDescriptif" class="col-sm-2 control-label">Descriptif</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["descriptif", "size" => 30, "class" => "form-control", "id" => "fieldDescriptif"]) ?>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <?php echo $this->tag->submitButton(["Save", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>
