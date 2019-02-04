@@ -1,47 +1,60 @@
 <?php
-use Phalcon\Di\FactoryDefault;
 
-error_reporting(E_ALL);
+/**
+ * Laravel - A PHP Framework For Web Artisans
+ *
+ * @package  Laravel
+ * @author   Taylor Otwell <taylor@laravel.com>
+ */
 
-define('BASE_PATH', dirname(__DIR__));
-define('APP_PATH', BASE_PATH . '/app');
+define('LARAVEL_START', microtime(true));
 
-try {
+/*
+|--------------------------------------------------------------------------
+| Register The Auto Loader
+|--------------------------------------------------------------------------
+|
+| Composer provides a convenient, automatically generated class loader for
+| our application. We just need to utilize it! We'll simply require it
+| into the script here so that we don't have to worry about manual
+| loading any of our classes later on. It feels great to relax.
+|
+*/
 
-    /**
-     * The FactoryDefault Dependency Injector automatically registers
-     * the services that provide a full stack framework.
-     */
-    $di = new FactoryDefault();
+require __DIR__.'/../vendor/autoload.php';
 
-    /**
-     * Handle routes
-     */
-    include APP_PATH . '/config/router.php';
+/*
+|--------------------------------------------------------------------------
+| Turn On The Lights
+|--------------------------------------------------------------------------
+|
+| We need to illuminate PHP development, so let us turn on the lights.
+| This bootstraps the framework and gets it ready for use, then it
+| will load up this application so that we can run it and send
+| the responses back to the browser and delight our users.
+|
+*/
 
-    /**
-     * Read services
-     */
-    include APP_PATH . '/config/services.php';
+$app = require_once __DIR__.'/../bootstrap/app.php';
 
-    /**
-     * Get config service for use in inline setup below
-     */
-    $config = $di->getConfig();
+/*
+|--------------------------------------------------------------------------
+| Run The Application
+|--------------------------------------------------------------------------
+|
+| Once we have the application, we can handle the incoming request
+| through the kernel, and send the associated response back to
+| the client's browser allowing them to enjoy the creative
+| and wonderful application we have prepared for them.
+|
+*/
 
-    /**
-     * Include Autoloader
-     */
-    include APP_PATH . '/config/loader.php';
+$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
-    /**
-     * Handle the request
-     */
-    $application = new \Phalcon\Mvc\Application($di);
+$response = $kernel->handle(
+    $request = Illuminate\Http\Request::capture()
+);
 
-    echo str_replace(["\n","\r","\t"], '', $application->handle()->getContent());
+$response->send();
 
-} catch (\Exception $e) {
-    echo $e->getMessage() . '<br>';
-    echo '<pre>' . $e->getTraceAsString() . '</pre>';
-}
+$kernel->terminate($request, $response);
