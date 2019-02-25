@@ -1,47 +1,99 @@
-<?php 
+<?php
 
-namespace App\Http\Controllers; 
+namespace App\Http\Controllers;
 
-use App\Http\Requests\ImagesRequest; 
-use App\Gestion\PhotoGestionInterface;
+use App\Repositories\PhotoRepository;
+
+use Illuminate\Http\Request;
 
 class PhotoController extends Controller
 {
-    public function getForm()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    protected $photoRepository;
+
+    protected $nbrPerPage = 4;
+
+    public function __construct(PhotoRepository $photoRepository)
     {
-        return view("photo");
+        $this->photoRepository = $photoRepository;
+    }
+    
+    public function index()
+    {
+        $photo = $this->photoRepository->getPaginate($this->nbrPerPage);
+        $links = $photo->render();
+
+        return view('photo.index', compact('photo', 'links'));
     }
 
-    public function postForm(ImagesRequest $request, PhotoGestion $photogestion)
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-        /*$image = $request->file("image");
+        //
+    }
 
-        if($image->isValid()){
-            $chemin = config("images.path");
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
 
-            $extension = $image->getClientOriginalExtension(); 
+    /**
+     * Display the specified resource.
+     * 
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
 
-            do
-            {
-                $nom = str_random(10) . "." . $extension;
-            }while(file_exists($chemin . '/' . $nom));
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
 
-            if($image->move($chemin, $nom)){
-                return view("photo_ok");
-            }
-        }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
 
-        return redirect("photo")->with("error", "Désolé mais votre image ne peut pas être envoyé !");*/
-
-        if($photogestion->save($request->file("image"))){
-            return view("photo_ok");
-        }
-        return redirect("photo")->with("error", "Désolé mais votre image ne peut pas être envoyée !");
-
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }
-
-
-
-
-?>

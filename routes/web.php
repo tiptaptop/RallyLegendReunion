@@ -16,13 +16,19 @@ Route::get("users", "UsersController@getInfos");
 Route::post("users", "UsersController@postInfos"); 
 Route::get("contact", "ContactController@getForm"); 
 Route::post("contact", "ContactController@postForm");
-Route::get("photo", "PhotoController@getForm");
-Route::post("photo", "PhotoController@postForm"); 
+Route::resource('photo', 'PhotoController');
+Route::resource('evenement', 'EvenementController');
 Route::resource("user", "UtilisateurController");
 Route::resource('post', 'PostController', ['except' => ['show', 'edit', 'update']]);
+Route::get('post/tag/{tag}', 'PostController@indexTag');
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
 
 
 
+ 
 
 
 

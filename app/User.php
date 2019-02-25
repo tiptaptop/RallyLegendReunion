@@ -6,7 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends \TCG\Voyager\Models\User
 {
     use Notifiable;
 
@@ -36,5 +36,20 @@ class User extends Authenticatable
     public function posts()
     {
         return $this->hasMany("App\Posts");
+    }
+
+    public function vehicule()
+    {
+        return $this->hasOne('App\Vehicule', 'idVehicule');
+    }
+
+    public function commentaire()
+    {
+        return $this->hasMany('App\Commentaire');
+    }
+
+    public function evenement()
+    {
+        return $this->belongsTo('Evenement');
     }
 }
