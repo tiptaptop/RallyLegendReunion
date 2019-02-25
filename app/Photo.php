@@ -8,6 +8,7 @@ class Photo extends Model
 {
     protected $table = "photo"; 
 
+
     public function users()
     {
         return $this->belongsTo('User', 'idUser');
