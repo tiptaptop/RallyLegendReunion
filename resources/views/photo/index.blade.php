@@ -6,10 +6,15 @@
     	@if(session()->has('ok'))
 			<div class="alert alert-success alert-dismissible">{!! session('ok') !!}</div>
 		@endif
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h3 class="panel-title">Galerie Photo</h3>
-			</div>
+		<section class="bg-light" id="portfolio">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Galerie</h2>
+          <h3 class="section-subheading text-muted">Les photos et présentation de nos plus beaux véhicules.</h3>
+        </div>
+	  </div>
+	</div>
 			<table class="table">
 				<thead>
 					<tr>
