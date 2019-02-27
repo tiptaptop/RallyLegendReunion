@@ -18,7 +18,7 @@
               <a class="nav-link js-scroll-trigger" style="Color: #D35352;" href="index2.html">Accueil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" style="Color: #D35352;" href="focus.html">essaie/focus</a>
+              <a class="nav-link js-scroll-trigger" style="Color: #D35352;" href="focus.html">Essaie/focus</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" style="Color: #D35352;" href="#contact">Contact</a>
@@ -39,7 +39,7 @@
 		</div>
 		<div class="row">
         <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+          <a class="portfolio-link" data-toggle="modal" href="">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fas fa-plus fa-3x"></i>
@@ -104,7 +104,7 @@
                 <!-- Project Details Go Here -->
                 <h2 class="text-uppercase"></h2>
                 <p class="item-intro text-muted"></p>
-                <img class="img-fluid d-block mx-auto" src="img/15.jpg" alt="">
+                <img class="img-fluid d-block mx-auto" src="" alt="">
                 <p></p>
                 <ul class="list-inline">
                   <li>Date: </li>
