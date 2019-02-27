@@ -24,4 +24,6 @@ class EvenementController extends Controller
 
         return view('evenement.index', compact('evenement', 'links'));
     }
+
+   
 }

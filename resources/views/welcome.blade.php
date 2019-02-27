@@ -1,98 +1,270 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="fr">
 
-        <title>Laravel</title>
+  <head>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+    <title>RALLY LEGEND</title>
 
-            .full-height {
-                height: 100vh;
-            }
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
- 
-            .position-ref {
-                position: relative;
-            }
+    <!-- Custom fonts for this template -->
+    <link href="css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+    <!-- Custom styles for this template -->
+    <link href="css/agency.css" rel="stylesheet">
 
-            .content {
-                text-align: center;
-            }
 
-            .title {
-                font-size: 84px;
-            }
+  </head>
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+  <body id="page-top">
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Rally Legend</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menue
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
             @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+                      @auth
+                        <li class="nav-item">
+                          <a class="nav-link" style="Color: #D35352;" href="{{ url('/home') }}">Espace adhérent</a>
+                        </li>
+                      @else
+                        <li class="nav-item">
+                          <a class="nav-link" style="Color: #D35352;" href="{{ route('login') }}">Se connecter</a>
+                        </li>
+                          @if (Route::has('register'))
+                            <li class="nav-item">
+                              <a class="nav-link" style="Color: #D35352;" href="{{ route('register') }}">S'inscrire</a>
+                            </li>
+                          @endif
+                      @endauth
+              @endif
+          </ul>
         </div>
-    </body>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+          <div class="intro-lead-in">Fan de voiture d'époque/collection?</div>
+          <div class="intro-heading text-uppercase">passionné collectioneur photographe</div>
+          <a class="btn btn-dark btn-xl text-uppercase js-scroll-trigger" href="{{ route('login') }}">Ce site est fait pour vous</a>
+        </div>
+      </div>
+    </header>
+
+
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">évènement</h2>
+            <h3 class="section-subheading text-muted">Nos rassemblements à venir.</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="timeline">
+              <li>
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4>30 septembre 2018</h4>
+                    <h4 class="subheading">1ere montée historique de Matouta</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">C’est fait, le Club de Jean François GRONDIN nous dévoile une nouveauté pour 2018 !
+          Il y a une dizaine de jours environ, le Club Rallye Legend annonçait sur son blog un nouvel évènement inédit, avec comme teaser un simple visuel indiquant « nouveauté » Rallye Legend Réunion…
+          Le voile est ainsi levé en ce lundi soir tardivement, et indique ainsi que cette nouveauté concerne un nouvel itinéraire, une nouvelle ville qui accueillera une montée historique.
+          Un 2ème site de montée de démonstration dite historique qui devait se faire mais où ? Après réflexion et divers contacts établis, c’est la mairie de Saint Joseph qui était la plus intéressée avec un élu aux sports passionné de sports mécaniques et donc de rallye, comment pouvait il en être autrement. Et C’est parti pour de nouvelles aventures avec un rendez-vous pris à Saint Jo le 30 septembre  2018.
+          C’est donc le dimanche 30 septembre que se tiendra la toute première Montée Historique dans le Sud, avec comme itinéraire MATOUTA !</p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4>21 septembre 2018</h4>
+                    <h4 class="subheading">Expo youngtimers sportives, collectors et series limitées</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">Afin de preparer un futur rassemblement qui se greffera sur une expo de vehicules anciens lors de la journée du patrimoine,  le 21 septembre 2018 sur la commune de l'entre deux, je vous demande pour ceux dont je n'ai pas les coordonnées et qui seraient intéréssés de me les envoyer via notre formulaire de contact : <br><br>
+
+            - Nom/Prenom<br>
+            - Numéro de téléphone<br>
+            - Email<br><br>
+
+          VEHICULES ACCEPTES<br>
+          modele de vehicule : véhicules Youngtimer  sportives  fabriquées entre 1974 et 1994. On fera un tri parmi les vehicules qui nous seront proposés.<br><br>  
+                    Véhicules plus anciens acceptés si sportives ou passé sportif reconnu.<br><br>
+                    Vehicules collector ou serie limitée meme si elles sont recentes.<br><br> 
+
+          PAS DE DIESEL. PAS DE TUNING.<br><br>
+
+          Les vehicules ne rentrant pas dans cette categorie ne seront pas pris en compte. </p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4>18 septembre 2018</h4>
+                    <h4 class="subheading">Journée du Patrimoine</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">Exposition de véhicules anciens à l'entre deux dans le cadre des journées du patrimoine organisé par l'OMAG de l'entre deux et les differents clubs autos existants.</p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4>9 décembre 2018</h4>
+                    <h4 class="subheading">3ème montée Panon Historic</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">Comment scinder un évènement en deux c'est à dire la 3ème montée Panon Historic et une exposition animation délicate à mettre en place pendant une démonstration automobile car les gens viennent essentiellement pour la "course".
+					Le site : plateau sportif de trois bassins à proximité de la place des festivités. C'est organiser un évènement distinct mais lié à un autre principal Une présentation et exposition de voitures des participants à la 3ème Montée Panon Historic qui aura lieu en décembre 2018.
+					La présence je l'espère d'autres associations de Trois Bassins avec valorisation de produits locaux et artisanaux
+					Même ceux qui ne vont pas rouler mais juste exposer a montée Panon pourront bien sur venir à cette journée.</p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-image">
+                  <h4>Vous aussi
+                    <br>participer
+                    <br>à nos event!</h4>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">contacter nous</h2>
+            <h3 class="section-subheading text-muted">Pour plus d'information sur nos événement et/ou nos rassemblement.</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <form id="contactForm" name="sentMessage" novalidate="novalidate">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" id="name" type="text" placeholder="Votre nom/prenom*" required="required" data-validation-required-message="Veuillez entrer votre nom/prenom.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="email" type="email" placeholder="Votre email*" required="required" data-validation-required-message="Veuillez entrer votre adresse mail.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="phone" type="tel" placeholder="Votre numéro de téléphone*" required="required" data-validation-required-message="Veuillez entrer votre numéro de téléphone.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <textarea class="form-control" id="message" placeholder="Votre message*" required="required" data-validation-required-message="Saisissez votre message."></textarea>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-lg-12 text-center">
+                  <div id="success"></div>
+                  <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Envoyer un message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <span class="copyright">Copyright &copy; Rally Legend Réunion 2019</span>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/RallyLegend/?epa=SEARCH_BOX" target=_blank>
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://rally-legend.skyrock.com/archives/#content_positioning" target=_blank>
+               <i class="fab fa-speakap"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline quicklinks">
+              <li class="list-inline-item">
+                <a href="#">Politique de confidentialité</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">Conditions d'utilisation</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"     crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"    crossorigin="anonymous"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/agency.js"></script>
+
+  </body>
+
 </html>
