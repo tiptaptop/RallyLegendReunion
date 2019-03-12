@@ -14,3 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Route pour inscription sur critère
+Route::get('/signin', function() {
+	return view('signin');
+});
+
+//route pour les CGU du site 
+route::get('/gcu', function() {
+	return view('gcu');
+});
+
+//route pour le formulaire essaie focus final
+route::get('/essaie-form', function() {
+	return view('essaie-form')
+})
