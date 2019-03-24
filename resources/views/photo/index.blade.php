@@ -1,15 +1,100 @@
 @extends('template')
 
 @section('contenu')
+
+<body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top" id="index">Rally Legend</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" style="Color: #D35352;" href="{{ url('/home') }}">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" style="Color: #D35352;" href="{{ url('/post') }}">Essaie/focus</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" style="Color: #D35352;" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+	<section class="bg-light" id="portfolio">
+    	<div class="container">
+      		<div class="row">
+        		<div class="col-lg-12 text-center">
+          			<h2 class="section-heading text-uppercase">Galerie</h2>
+          			<h3 class="section-subheading text-muted">Les photos et présentation de nos plus beaux véhicules.</h3>
+       			 </div>
+	 		 </div>
+		</div>
+		<div class="row">
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <a class="portfolio-link" data-toggle="modal" href="">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fas fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="" alt="">
+          </a>
+          <div class="portfolio-caption">
+            <h4></h4>
+            <p class="text-muted"></p>
+          </div>
+        </div>
+        
+
+  
+  <!-- Modal -->
+  <div class="portfolio-modal modal fade" id="portfolioModal12" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2 class="text-uppercase"></h2>
+                <p class="item-intro text-muted"></p>
+                <img class="img-fluid d-block mx-auto" src="" alt="">
+                <p></p>
+                <ul class="list-inline">
+                  <li>Date: </li>
+                  <li>Évènenement: </li>
+                  <li>Catégorie: </li>
+                </ul>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fas fa-times"></i>
+                  Fermer la fenêtre</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
     <br>
     <div class="col-sm-offset-4 col-sm-4">
     	@if(session()->has('ok'))
 			<div class="alert alert-success alert-dismissible">{!! session('ok') !!}</div>
 		@endif
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h3 class="panel-title">Galerie Photo</h3>
-			</div>
+		
 			<table class="table">
 				<thead>
 					<tr>
