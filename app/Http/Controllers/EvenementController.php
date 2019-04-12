@@ -22,7 +22,7 @@ class EvenementController extends Controller
         $evenement = $this->evenementRepository->getPaginate($this->nbrPerPage);
         $links = $evenement->render();
 
-        return view('evenement.index', compact('evenement', 'links'));
+        return view('evenement.index', compact('evenement', 'links') );
     }
 
    
