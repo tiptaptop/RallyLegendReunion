@@ -6,13 +6,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="csrf-token" content="{{ csrf_token() }}">
 		<title>Rally Legend Reunion</title>
-		{!! Html::style('https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css') !!}
-		{!! Html::style('https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css') !!}
 		<link href="vendor/css/bootstrap.min.css" rel="stylesheet">
 		<!--[if lt IE 9]>
 			{{ Html::style('https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js') }}
 			{{ Html::style('https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js') }}
 		<![endif]-->
+		@yield('css')
 		<link href="css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
@@ -37,8 +36,20 @@
   	          @if (Route::has('login'))
   	                    @auth
   	                      <li class="nav-item">
-  	                        <a class="nav-link" style="Color: #D35352;" href="{{ url('/home') }}">Espace adhérent</a>
+  	                        <a class="nav-link"  style="Color: #D35352;" href="{{ url('/forums') }}">Espace adhérent</a>
   	                      </li>
+													<li class="nav-item">
+                          <a class="nav-link" style="Color: #D35352;"href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                          </li>
+
   	                    @else
   	                      <li class="nav-item">
   	                        <a class="nav-link" style="Color: #D35352;" href="{{ route('login') }}">Se connecter</a>
@@ -98,6 +109,7 @@
     <script src="js/contact_me.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/agency.js"></script>
+		<script src="js/agency.js"></script> 
+		@yield('js')
 	</body>
 </html>

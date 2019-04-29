@@ -1,40 +1,30 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'RallyLegendReunion') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script
-  src="http://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="vendor/css/bootstrap.min.css" rel="stylesheet">
+<html lang="fr">
+    <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="csrf-token" content="{{ csrf_token() }}">
+		<title>Rally Legend Reunion</title>
+		<link href="vendor/css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			{{ Html::style('https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js') }}
+			{{ Html::style('https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js') }}
+		<![endif]-->
+		@yield('css')
+		<link href="css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
     <link href="css/agency.css" rel="stylesheet">
-    @yield('css')
-    <style> textarea { resize: none; } </style>
-</head>
-<body>
-<!-- Navigation -->
-<div id='app'>
-<nav class="navbar navbar-expand-lg navbar-dark navbar-shrink" id="mainNav">
+		<style> textarea { resize: none; } </style>
+	</head>
+	<body id="page-top">
+	<!-- Navigation -->
+		<nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink" id="mainNav">
   	    <div class="container">
   	      <a class="navbar-brand js-scroll-trigger" href="{{ url('/') }}">Rally Legend</a>
   	      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" 	aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,10 +36,10 @@
   	          @if (Route::has('login'))
   	                    @auth
   	                      <li class="nav-item">
-  	                        <a class="nav-link" style="Color:#D35352;" href="{{ url('/forums') }}">Espace adhérent</a>
+  	                        <a class="nav-link" style="Color: #D35352;" href="{{ url('/forums') }}">Espace adhérent</a>
   	                      </li>
-                          <li class="nav-item">
-                          <a class="nav-link" style="Color:#D35352;"  href="{{ route('logout') }}"
+													<li class="nav-item">
+                          <a class="nav-link" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Se déconnecter') }}
@@ -75,7 +65,7 @@
   	      </div>
   	    </div>
   	  </nav>
-		@yield('content')
+		@yield('contenu')
 		 <!-- Footer -->
 		 <footer>
       <div class="container">
@@ -119,8 +109,7 @@
     <script src="js/contact_me.js"></script>
 
     <!-- Custom scripts for this template -->
-		<script src="js/agency.js"></script>
-    </div>
+		<script src="js/agency.js"></script> 
 		@yield('js')
 	</body>
 </html>

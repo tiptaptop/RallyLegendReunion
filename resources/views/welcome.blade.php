@@ -7,7 +7,7 @@
         <div class="intro-text">
           <div class="intro-lead-in">Fan de voiture d'époque/collection?</div>
           <div class="intro-heading text-uppercase">passionné collectioneur photographe</div>
-          <a class="btn btn-dark btn-xl text-uppercase js-scroll-trigger" href="{{ route('login') }}">Ce site est fait pour vous</a>
+          <a class="btn btn-dark btn-xl text-uppercase js-scroll-trigger" href="{{ url('/forums') }}">Ce site est fait pour vous</a>
         </div>
       </div>
     </header>

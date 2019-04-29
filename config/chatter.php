@@ -145,7 +145,6 @@ return [
     |       set to true.
     |
     */
-
     'security' => [
         'limit_time_between_posts' => true, //
         'time_between_posts'       => 1, // In minutes

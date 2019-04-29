@@ -2811,6 +2811,7 @@ return array(
     'Larapack\\Hooks\\RawOutput' => $vendorDir . '/larapack/hooks/src/Hooks.php',
     'Larapack\\VoyagerHooks\\Controllers\\HooksController' => $vendorDir . '/larapack/voyager-hooks/src/Controllers/HooksController.php',
     'Larapack\\VoyagerHooks\\VoyagerHooksServiceProvider' => $vendorDir . '/larapack/voyager-hooks/src/VoyagerHooksServiceProvider.php',
+    'Laravel\\Installer\\Console\\NewCommand' => $vendorDir . '/laravel/installer/src/NewCommand.php',
     'Laravel\\Tinker\\ClassAliasAutoloader' => $vendorDir . '/laravel/tinker/src/ClassAliasAutoloader.php',
     'Laravel\\Tinker\\Console\\TinkerCommand' => $vendorDir . '/laravel/tinker/src/Console/TinkerCommand.php',
     'Laravel\\Tinker\\TinkerCaster' => $vendorDir . '/laravel/tinker/src/TinkerCaster.php',

@@ -13,7 +13,7 @@
 			}
 		</style>
 	@endif
-@stop
+@stop	
 
 @section('content')
 

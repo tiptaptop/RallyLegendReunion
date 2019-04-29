@@ -114,6 +114,7 @@ class ComposerStaticInit7236081c2a84d6fe45db09f6b21bcc73
             'League\\Flysystem\\' => 17,
             'Lcobucci\\JWT\\' => 13,
             'Laravel\\Tinker\\' => 15,
+            'Laravel\\Installer\\Console\\' => 26,
             'Larapack\\VoyagerHooks\\' => 22,
             'Larapack\\Hooks\\' => 15,
             'Larapack\\DoctrineSupport\\' => 25,
@@ -354,6 +355,10 @@ class ComposerStaticInit7236081c2a84d6fe45db09f6b21bcc73
         'Laravel\\Tinker\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
+        ),
+        'Laravel\\Installer\\Console\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/installer/src',
         ),
         'Larapack\\VoyagerHooks\\' => 
         array (
@@ -3351,6 +3356,7 @@ class ComposerStaticInit7236081c2a84d6fe45db09f6b21bcc73
         'Larapack\\Hooks\\RawOutput' => __DIR__ . '/..' . '/larapack/hooks/src/Hooks.php',
         'Larapack\\VoyagerHooks\\Controllers\\HooksController' => __DIR__ . '/..' . '/larapack/voyager-hooks/src/Controllers/HooksController.php',
         'Larapack\\VoyagerHooks\\VoyagerHooksServiceProvider' => __DIR__ . '/..' . '/larapack/voyager-hooks/src/VoyagerHooksServiceProvider.php',
+        'Laravel\\Installer\\Console\\NewCommand' => __DIR__ . '/..' . '/laravel/installer/src/NewCommand.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
