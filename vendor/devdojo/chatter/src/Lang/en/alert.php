@@ -4,11 +4,11 @@ return [
     'success' => [
         'title'  => 'Well done!',
         'reason' => [
-            'submitted_to_post'       => 'Response successfully submitted to '.mb_strtolower(trans('chatter::intro.titles.discussion')).'.',
-            'updated_post'            => 'Successfully updated the '.mb_strtolower(trans('chatter::intro.titles.discussion')).'.',
-            'destroy_post'            => 'Successfully deleted the response and '.mb_strtolower(trans('chatter::intro.titles.discussion')).'.',
-            'destroy_from_discussion' => 'Successfully deleted the response from the '.mb_strtolower(trans('chatter::intro.titles.discussion')).'.',
-            'created_discussion'      => 'Successfully created a new '.mb_strtolower(trans('chatter::intro.titles.discussion')).'.',
+            'submitted_to_post'       => 'La réponse a été transféré '.mb_strtolower(trans('chatter::intro.titles.discussion')).'.',
+            'updated_post'            => 'Changement effectué '.mb_strtolower(trans('chatter::intro.titles.discussion')).'.',
+            'destroy_post'            => 'La réponse a été supprimé'.mb_strtolower(trans('chatter::intro.titles.discussion')).'.',
+            'destroy_from_discussion' => 'La réponse a été supprimé de '.mb_strtolower(trans('chatter::intro.titles.discussion')).'.',
+            'created_discussion'      => 'Création nouvelle discussion '.mb_strtolower(trans('chatter::intro.titles.discussion')).'.',
         ],
     ],
     'info' => [

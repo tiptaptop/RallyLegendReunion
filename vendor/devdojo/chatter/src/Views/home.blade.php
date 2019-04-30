@@ -23,7 +23,7 @@
 		<div id="chatter_hero_dimmer"></div>
 		<?php $headline_logo = Config::get('chatter.headline_logo'); ?>
 		@if( isset( $headline_logo ) && !empty( $headline_logo ) )
-			<img src="{{ Config::get('chatter.headline_logo') }}">
+			<!--<img src="{{ Config::get('chatter.headline_logo') }}">-->
 		@else
 			<h1>@lang('chatter::intro.headline')</h1>
 			<p>@lang('chatter::intro.description')</p>

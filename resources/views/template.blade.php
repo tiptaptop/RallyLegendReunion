@@ -38,18 +38,12 @@
   	                      <li class="nav-item">
   	                        <a class="nav-link"  style="Color: #D35352;" href="{{ url('/forums') }}">Espace adhérent</a>
   	                      </li>
-													<li class="nav-item">
-                          <a class="nav-link" style="Color: #D35352;"href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                          </li>
-
+                          <li class="nav-item">
+  	                        <a class="nav-link"  style="Color: #D35352;" href="{{ url('/evenement') }}">Evénement</a>
+  	                      </li>
+                          <li class="nav-item">
+  	                        <a class="nav-link"  style="Color: #D35352;" href="{{ url('/photo') }}">Galerie Photo</a>
+  	                      </li>
   	                    @else
   	                      <li class="nav-item">
   	                        <a class="nav-link" style="Color: #D35352;" href="{{ route('login') }}">Se connecter</a>
@@ -59,6 +53,12 @@
   	                            <a class="nav-link" style="Color: #D35352;" href="{{ route('register') }}">S'inscrire</a>
   	                          </li>
   	                        @endif
+                            <li class="nav-item">
+  	                        <a class="nav-link"  style="Color: #D35352;" href="{{ url('/evenement') }}">Evénement</a>
+  	                      </li>
+                          <li class="nav-item">
+  	                        <a class="nav-link"  style="Color: #D35352;" href="{{ url('/photo') }}">Galerie Photo</a>
+  	                      </li>
   	                    @endauth
   	            @endif
   	        </ul>
