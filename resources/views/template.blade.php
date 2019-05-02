@@ -45,15 +45,10 @@
   	                        <a class="nav-link"  style="Color: #D35352;" href="{{ url('/photo') }}">Galerie Photo</a>
   	                      </li>
   	                    @else
-  	                      <li class="nav-item">
-  	                        <a class="nav-link" style="Color: #D35352;" href="{{ route('login') }}">Se connecter</a>
+													<li class="nav-item">
+  	                        <a class="nav-link"  style="Color: #D35352;" href="{{ url('/login') }}">Espace adhérent</a>
   	                      </li>
-  	                        @if (Route::has('register'))
-  	                          <li class="nav-item">
-  	                            <a class="nav-link" style="Color: #D35352;" href="{{ route('register') }}">S'inscrire</a>
-  	                          </li>
-  	                        @endif
-                            <li class="nav-item">
+                          <li class="nav-item">
   	                        <a class="nav-link"  style="Color: #D35352;" href="{{ url('/evenement') }}">Evénement</a>
   	                      </li>
                           <li class="nav-item">

@@ -46,9 +46,15 @@
   	        <ul class="navbar-nav text-uppercase ml-auto">
   	          @if (Route::has('login'))
   	                    @auth
-  	                      <li class="nav-item">
-  	                        <a class="nav-link" style="Color:#D35352;" href="{{ url('/forums') }}">Espace adhérent</a>
+                          <li class="nav-item">
+  	                        <a class="nav-link"  style="Color: #D35352;" href="{{ url('/forums') }}">Espace adhérent</a>
   	                      </li>
+                          <li class="nav-item">
+  	                          <a class="nav-link"  style="Color: #D35352;" href="{{ url('/evenement') }}">Evénement</a>
+  	                        </li>
+                            <li class="nav-item">
+  	                          <a class="nav-link"  style="Color: #D35352;" href="{{ url('/photo') }}">Galerie Photo</a>
+  	                        </li>
                           <li class="nav-item">
                           <a class="nav-link" style="Color:#D35352;"  href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -62,9 +68,15 @@
                           </li>
 
   	                    @else
-  	                      <li class="nav-item">
-  	                        <a class="nav-link" style="Color: #D35352;" href="{{ route('login') }}">Se connecter</a>
-  	                      </li>
+                            <li class="nav-item">
+  	                          <a class="nav-link"  style="Color: #D35352;" href="{{ url('/login') }}">Espace adhérent</a>
+  	                        </li>
+                            <li class="nav-item">
+  	                          <a class="nav-link"  style="Color: #D35352;" href="{{ url('/evenement') }}">Evénement</a>
+  	                        </li>
+                            <li class="nav-item">
+  	                          <a class="nav-link"  style="Color: #D35352;" href="{{ url('/photo') }}">Galerie Photo</a>
+  	                        </li>
   	                        @if (Route::has('register'))
   	                          <li class="nav-item">
   	                            <a class="nav-link" style="Color: #D35352;" href="{{ route('register') }}">S'inscrire</a>
