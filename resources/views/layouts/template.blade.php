@@ -5,13 +5,14 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="csrf-token" content="{{ csrf_token() }}">
-		<title>Rally Legend Reunion</title>
+    <title>Rally Legend Reunion</title>
+    <link href="{{ asset('css/style.css')}}" rel="stylesheet" type="text/css">
 		<link href="vendor/css/bootstrap.min.css" rel="stylesheet">
 		<!--[if lt IE 9]>
 			{{ Html::style('https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js') }}
 			{{ Html::style('https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js') }}
 		<![endif]-->
-		@yield('css')
+    @yield('css')
 		<link href="css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
@@ -20,51 +21,65 @@
 
     <!-- Custom styles for this template -->
     <link href="css/agency.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 		<style> textarea { resize: none; } </style>
 	</head>
 	<body id="page-top">
 	<!-- Navigation -->
-		<nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink" id="mainNav">
-  	    <div class="container">
-  	      <a class="navbar-brand js-scroll-trigger" href="{{ url('/') }}">Rally Legend</a>
-  	      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" 	aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-  	        Menue
-  	        <i class="fas fa-bars"></i>
-  	      </button>
-  	      <div class="collapse navbar-collapse" id="navbarResponsive">
-  	        <ul class="navbar-nav text-uppercase ml-auto">
-  	          @if (Route::has('login'))
-  	                    @auth
-  	                      <li class="nav-item">
-  	                        <a class="nav-link" style="Color: #D35352;" href="{{ url('/forums') }}">Espace adhérent</a>
-  	                      </li>
-													<li class="nav-item">
-                          <a class="nav-link" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Se déconnecter') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                          </li>
-
-  	                    @else
-  	                      <li class="nav-item">
-  	                        <a class="nav-link" style="Color: #D35352;" href="{{ route('login') }}">Se connecter</a>
-  	                      </li>
-  	                        @if (Route::has('register'))
-  	                          <li class="nav-item">
-  	                            <a class="nav-link" style="Color: #D35352;" href="{{ route('register') }}">S'inscrire</a>
-  	                          </li>
-  	                        @endif
-  	                    @endauth
-  	            @endif
-  	        </ul>
-  	      </div>
-  	    </div>
-  	  </nav>
+  <div id='app'>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-shrink" id="mainNav">
+            <div class="container">
+              <a class="navbar-brand js-scroll-trigger" href="{{ url('/') }}">Rally Legend</a>
+              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" 	aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menue
+                <i class="fas fa-bars"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                  @if (Route::has('login'))
+                            @auth
+                              <li class="nav-item">
+                                <a class="nav-link"  style="Color: #D35352;" href="{{ url('/forums') }}">Espace adhérent</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link"  style="Color: #D35352;" href="{{ url('/evenement') }}">Evénement</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link"  style="Color: #D35352;" href="{{ url('/photo') }}">Galerie Photo</a>
+                                </li>
+                              <li class="nav-item">
+                              <a class="nav-link" style="Color:#D35352;"  href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            {{ __('Se déconnecter') }}
+                                        </a>
+    
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                              </li>
+    
+                            @else
+                                <li class="nav-item">
+                                  <a class="nav-link"  style="Color: #D35352;" href="{{ url('/login') }}">Espace adhérent</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link"  style="Color: #D35352;" href="{{ url('/evenement') }}">Evénement</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link"  style="Color: #D35352;" href="{{ url('/photo') }}">Galerie Photo</a>
+                                </li>
+                                @if (Route::has('register'))
+                                  <li class="nav-item">
+                                    <a class="nav-link" style="Color: #D35352;" href="{{ route('register') }}">S'inscrire</a>
+                                  </li>
+                                @endif
+                            @endauth
+                    @endif
+                </ul>
+              </div>
+            </div>
+          </nav>
 		@yield('contenu')
 		 <!-- Footer -->
 		 <footer>
