@@ -136,23 +136,8 @@
     <!-- Contact form JavaScript -->
     <script src="{{ asset('js/jqBootstrapValidation.js') }}"></script>
     <script src="{{ asset('js/contact_me.js') }}"></script>
+    <script src="{{ asset('js/galerie.js') }}"></script>
 
-<script>
-
-$(document).ready(function(){
-  $(".fancybox").fancybox({
-        openEffect: "none",
-        closeEffect: "none"
-    });
-
-    $(".zoom").hover(function(){
-
-		$(this).addClass('transition');
-	}, function(){
-
-		$(this).removeClass('transition');
-	});
-});
     </script>
 
     <!-- Custom scripts for this template -->
