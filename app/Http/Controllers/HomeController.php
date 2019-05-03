@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+
 
 class HomeController extends Controller
 {
@@ -14,7 +17,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('admin', ['only' => 'gestion']);
+        //$this->middleware('admin', ['only' => 'gestion']);
     }
 
     /**
@@ -27,8 +30,10 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function admin()
+    public function gestion()
     {
+        $user = Auth::user();
+        var_dump($user);
         return view('admin');
     }
 }
