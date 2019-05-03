@@ -2,6 +2,53 @@
 
 @section('content')
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<!------ Include the above in your HEAD tag ---------->
+<link href="./galerie.css" rel="stylesheet" id="bootstrap-css">
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".fancybox").fancybox({
+          openEffect: "none",
+          closeEffect: "none"
+      });
+
+      $(".zoom").hover(function(){
+
+  		$(this).addClass('transition');
+  	}, function(){
+
+  		$(this).removeClass('transition');
+  	});
+  });
+
+
+</script>
+
+    <!-- Page Content -->
+   <div class="container page-top">
+
+
+
+        <div class="row">
+
+
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a href="https://images.pexels.com/photos/62307/air-bubbles-diving-underwater-blow-62307.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="fancybox" rel="ligthbox">
+                    <img  src="https://images.pexels.com/photos/62307/air-bubbles-diving-underwater-blow-62307.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="zoom img-fluid "  alt="">
+                </a>
+            </div>
+
+
+       </div>
+		</div>
+
 <body id="page-top">
 	<section class="bg-light" id="portfolio">
     	<div class="container">
@@ -12,24 +59,6 @@
        			 </div>
 	 		 </div>
 		</div>
-		<div class="row">
-        <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="">
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="" alt="">
-          </a>
-          <div class="portfolio-caption">
-            <h4></h4>
-            <p class="text-muted"></p>
-          </div>
-        </div>
-
-
-
 
     <br>
     <div class="col-sm-offset-4 col-sm-4">
