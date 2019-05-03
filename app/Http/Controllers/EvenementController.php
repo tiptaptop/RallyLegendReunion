@@ -30,8 +30,6 @@ class EvenementController extends Controller
     }
 
 public function myevent( $idevent ){
-
-    $id = Input::get('idevent');
     var_dump($idevent);
     $evenement = $this->evenementRepository->getPaginate($this->nbrPerPage);
     $links = $evenement->render(); 

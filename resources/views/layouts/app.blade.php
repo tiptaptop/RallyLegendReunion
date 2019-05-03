@@ -15,6 +15,7 @@
   src="http://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+  <script src="{{asset('js/jquery-perso.js')}}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -40,6 +41,9 @@
 </head>
 <body>
 <!-- Navigation -->
+@php
+var_dump($_SERVER['REQUEST_URI'])  ;
+@endphp
 <div id='app'>
 <nav class="navbar navbar-expand-lg navbar-dark navbar-shrink" id="mainNav">
   	    <div class="container">
@@ -53,13 +57,13 @@
   	          @if (Route::has('login'))
   	                    @auth
                           <li class="nav-item">
-  	                        <a class="nav-link"  style="Color: #D35352;" href="{{ url('/forums') }}">Espace adhérent</a>
+  	                        <a class="nav-link "  href="{{ url('/forums') }}">Espace adhérent</a>
   	                      </li>
-                          <li class="nav-item">
-  	                          <a class="nav-link"  style="Color: #D35352;" href="{{ url('/evenement') }}">Evénement</a>
+                          <li class="nav-item" >
+  	                          <a class="nav-link" id="test"  href="{{ url('/evenement') }}">Evénement</a>
   	                        </li>
                             <li class="nav-item">
-  	                          <a class="nav-link"  style="Color: #D35352;" href="{{ url('/photo') }}">Galerie Photo</a>
+  	                          <a class="nav-link"  href="{{ url('/photo') }}">Galerie Photo</a>
   	                        </li>
                           <li class="nav-item">
                           <a class="nav-link" style="Color:#D35352;"  href="{{ route('logout') }}"
@@ -75,21 +79,22 @@
 
   	                    @else
                             <li class="nav-item">
-  	                          <a class="nav-link"  style="Color: #D35352;" href="{{ url('/login') }}">Espace adhérent</a>
+  	                          <a class="nav-link"  href="{{ url('/login') }}">Espace adhérent</a>
   	                        </li>
                             <li class="nav-item">
-  	                          <a class="nav-link"  style="Color: #D35352;" href="{{ url('/evenement') }}">Evénement</a>
+  	                          <a class="nav-link"  href="{{ url('/evenement') }}">Evénement</a>
   	                        </li>
                             <li class="nav-item">
-  	                          <a class="nav-link"  style="Color: #D35352;" href="{{ url('/photo') }}">Galerie Photo</a>
+  	                          <a class="nav-link"  href="{{ url('/photo') }}">Galerie Photo</a>
   	                        </li>
   	                        @if (Route::has('register'))
   	                          <li class="nav-item">
-  	                            <a class="nav-link" style="Color: #D35352;" href="{{ route('register') }}">S'inscrire</a>
+  	                            <a class="nav-link" href="{{ route('register') }}">S'inscrire</a>
   	                          </li>
   	                        @endif
   	                    @endauth
-  	            @endif
+                @endif
+           
   	        </ul>
   	      </div>
   	    </div>

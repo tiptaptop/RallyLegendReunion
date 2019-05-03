@@ -15,7 +15,7 @@
             </div>
         </div>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
             <ul class="event-list">
     @foreach($evenement as $event)
     @php                 
@@ -43,15 +43,15 @@
             <p class="desc">{{$event->lieu}}</p>
             <p class="desc">{{$event->descriptif}}</p>
             <ul>
-              <li style="width:50%;"><a href="#website"><span class="fa fa-globe"></span> Website</a></li>
-              <li style="width:50%;"><span class="fa fa-money"></span> $39.99</li>
+              <li style="width:50%;"><a href="https://rally-legend.skyrock.com"><span class="fa fa-globe"></span>Skyrock</a></li>
+              <li style="width:50%;"><span class="fa fa-money"></span>Facebook</li>
             </ul>
           </div>
           <div class="social">
             <ul>
-              <li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
-              <li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
-              <li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+              <li class="facebook" style="width:33%;"><a href="#facebook"><span class="fab fa-facebook"></span></a></li>
+              <li class="twitter" style="width:34%;"><a href="#twitter"><span class="fab fa-twitter"></span></a></li>
+              <li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fab fa-google-plus"></span></a></li>
             </ul>
           </div>
         </li>
@@ -85,7 +85,8 @@
       @endforeach
         </ul>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-4">
+          <img src='img/18.jpg' class='img-fluid'>
           <img src='img/18.jpg' class='img-fluid'>
 
       </div>
