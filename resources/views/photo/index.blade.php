@@ -27,9 +27,9 @@
             <p class="text-muted"></p>
           </div>
         </div>
-        
 
-  
+
+
   <!-- Modal -->
   <div class="portfolio-modal modal fade" id="portfolioModal12" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -69,23 +69,14 @@
     	@if(session()->has('ok'))
 			<div class="alert alert-success alert-dismissible">{!! session('ok') !!}</div>
 		@endif
-		
+
 			<table class="table">
-				<thead>
-					<tr>
-						<th>#</th>
-						<th>Nom</th>
-						<th></th>
-						<th></th>
-						<th></th>
-					</tr>
-				</thead>
+
 				<tbody>
 					@foreach ($photo as $photo)
 						<tr>
 							<td>{!! $photo->id !!}</td>
 							<td class="text-primary"><strong>{!! $photo->name !!}</strong></td>
-							<td>{!! link_to_route('photo.show', 'Voir', [$photo->id], ['class' => 'btn btn-success btn-block']) !!}</td>
 							<td>{!! link_to_route('photo.edit', 'Modifier', [$photo->id], ['class' => 'btn btn-warning btn-block']) !!}</td>
 							<td>
 								{!! Form::open(['method' => 'DELETE', 'route' => ['photo.destroy', $photo->id]]) !!}
@@ -96,8 +87,4 @@
 					@endforeach
 	  			</tbody>
 			</table>
-		</div>
-		{!! link_to_route('photo.create', 'Télécharger une photo', [], ['class' => 'btn btn-info pull-right']) !!}
-		{!! $links !!}
-	</div>
 @endsection
