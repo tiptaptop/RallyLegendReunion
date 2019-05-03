@@ -1,6 +1,6 @@
-@extends('template')
+@extends('layouts.app')
 
-@section('contenu')
+@section('content')
     <!-- Header -->
     <header class="masthead">
       <div class="container">

@@ -23,10 +23,12 @@ Route::get('myevent/{idevent}', 'EvenementController@myevent');
 Route::resource("user", "UtilisateurController");
 Route::resource('post', 'PostController', ['except' => ['show', 'edit', 'update']]);
 Route::get('post/tag/{tag}', 'PostController@indexTag');
+Route::get("admin", "HomeController@gestion");
 
-Route::group(['prefix' => 'admin'], function () {
+
+/*Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
-});
+});*/
 
 
 
