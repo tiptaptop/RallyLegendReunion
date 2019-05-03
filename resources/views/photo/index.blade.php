@@ -2,6 +2,18 @@
 
 @section('content')
 
+<body id="page-top">
+	<section class="bg-light" id="portfolio">
+    	<div class="container">
+      		<div class="row">
+        		<div class="col-lg-12 text-center">
+          			<h2 class="section-heading text-uppercase">Galerie</h2>
+          			<h3 class="section-subheading text-muted">Les photos et présentation de nos plus beaux véhicules.</h3>
+       			 </div>
+	 		 </div>
+		</div>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -47,17 +59,6 @@
 
 
        </div>
-		</div>
-
-<body id="page-top">
-	<section class="bg-light" id="portfolio">
-    	<div class="container">
-      		<div class="row">
-        		<div class="col-lg-12 text-center">
-          			<h2 class="section-heading text-uppercase">Galerie</h2>
-          			<h3 class="section-subheading text-muted">Les photos et présentation de nos plus beaux véhicules.</h3>
-       			 </div>
-	 		 </div>
 		</div>
 
     <br>
