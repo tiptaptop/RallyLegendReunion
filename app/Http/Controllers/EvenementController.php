@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Repositories\EvenementRepository;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+
 
 class EvenementController extends Controller
 {
@@ -14,7 +16,7 @@ class EvenementController extends Controller
 
     public function __construct(EvenementRepository $evenementRepository)
     {
-        $this->middleware('auth', ['except' => ['index', 'indexTag']]);
+        $this->middleware('auth', ['except' => ['index', 'indexTag','myevent']]);
         $this->middleware('admin', ['only' => 'destroy']);
         $this->evenementRepository = $evenementRepository;
     }
@@ -26,6 +28,17 @@ class EvenementController extends Controller
 
         return view('evenement.index', compact('evenement', 'links'));
     }
+
+public function myevent( $idevent ){
+
+    $id = Input::get('idevent');
+    var_dump($idevent);
+    $evenement = $this->evenementRepository->getPaginate($this->nbrPerPage);
+    $links = $evenement->render(); 
+
+    return view('evenement.myevent', compact('evenement', 'links'));
+
+}
 
     public function create()
     {
