@@ -21,7 +21,11 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
+    <link href="{{ asset('css/ionicons.min.css') }}">
     <link href="{{ asset('css/all.css') }}">
+    <link href="{{ asset('css/AdminLTE.min.css') }}">
+    <link href="{{ asset('css/morris.css') }}">
+    <link href="{{ asset('css/_all-skins.min.css') }}"> 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -33,9 +37,8 @@
     <link href="{{ asset('css/agency.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{asset ('css/galerie.css')}}" rel="stylesheet" id="bootstrap-css">
-
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     @yield('css')
     <style> textarea { resize: none; } </style>
 </head>
@@ -139,8 +142,6 @@
     <script src="{{ asset('js/jqBootstrapValidation.js') }}"></script>
     <script src="{{ asset('js/contact_me.js') }}"></script>
     <script src="{{ asset('js/galerie.js') }}"></script>
-
-    </script>
 
     <!-- Custom scripts for this template -->
 		<script src="{{ asset('js/agency.js') }}"></script>

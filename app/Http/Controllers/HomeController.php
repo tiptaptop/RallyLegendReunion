@@ -35,7 +35,7 @@ class HomeController extends Controller
         $user = Auth::user();
         if($user->admin == 1)
         {
-            return view('admin');
+            return view('admin/admin');
         }
         else
         {
