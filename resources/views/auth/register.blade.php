@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">S'inscrire</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -58,6 +58,36 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="exampleFormControlSelect1">Statut</label>
+                          <select class="form-control" id="exampleFormControlSelect1">
+                            <option>Bénévole</option>
+                            <option>Propriétaire</option>
+                          </select>
+                        </div>
+                        
+                        <div class="form-group row vehicule">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Véhicule sportif datant de 1974 à 1994</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group row vehicule">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Véhicule sportif datant d'avant 1974</label>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row vehicule">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Véhicule d'exception limité à 5000 exemplaires maximum</label>
                             </div>
                         </div>
 
