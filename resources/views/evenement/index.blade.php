@@ -2,13 +2,14 @@
 
 @section('content')
 @php
+ // var_dump($evenement);
     $k = 0;
 @endphp
 <!--Titre de la page + Sloggan-->
 <section class="bg-light" id="events">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 text-center">
+            <div class="col-md-12 text-center">
                 <h2 class="section-heading text-uppercase">Calendrier</h2>
                 <h3 class="section-subheading text-muted">Tenez vous informer des prochains événements</h3>
             </div>
@@ -17,19 +18,30 @@
         <div class="col-md-6">
             <ul class="event-list">
     @foreach($evenement as $event)
-    @php
+    @php                 
       $k++;
+      //Date de l'event 
+          //Test en lecture de chaîne de caractère.
+          //  $test = explode(' ', $date);
+          //    var_dump( date('F', strtotime($date) ) );
+          $date = $event->date;
+          $intl_date_formatter = new IntlDateFormatter('fr_FR',
+                                      IntlDateFormatter::MEDIUM,
+                                      IntlDateFormatter::NONE);
+          $day_explode = explode(' ',  $intl_date_formatter->format(strtotime($date)));
+          //var_dump($day_explode);         
     @endphp
         <li>
           <time datetime="2014-07-20 0000">
-            <span class="day">8</span>
-            <span class="month">Jul</span>
-            <span class="year">2014</span>
-            <span class="time">12:00 AM</span>
+          <span class="day">{{$day_explode[0]}}</span>
+          <span class="month">{{$day_explode[1]}}</span>
+          <span class="year">{{$day_explode[2]}}</span>
+          <!--<span class="time">12:00 AM</span>-->
           </time>
           <div class="info">
-            <h2 class="title">One Piece Unlimited World</h2>
-            <p class="desc">PS Vita</p>
+          <h2 class="title">{{$event->titre}}</h2>
+            <p class="desc">{{$event->lieu}}</p>
+            <p class="desc">{{$event->descriptif}}</p>
             <ul>
               <li style="width:50%;"><a href="#website"><span class="fa fa-globe"></span> Website</a></li>
               <li style="width:50%;"><span class="fa fa-money"></span> $39.99</li>
@@ -74,7 +86,7 @@
         </ul>
       </div>
       <div class="col-md-6">
-          <img src='img/18.jpg' class='img-fluid  '>
+          <img src='img/18.jpg' class='img-fluid'>
 
       </div>
 </section>
