@@ -59,17 +59,7 @@
 	<div class="container chatter_container">
 
 	    <div class="row">
-
-	    	<div class="col-md-3 left-column">
-	    		<!-- SIDEBAR -->
-	    		<div class="chatter_sidebar">
-					<button class="btn btn-primary" id="new_discussion_btn"><i class="chatter-new"></i> @lang('chatter::messages.discussion.new')</button>
-					<a href="/{{ Config::get('chatter.routes.home') }}"><i class="chatter-bubble"></i> @lang('chatter::messages.discussion.all')</a>
-          {!! $categoriesMenu !!}
-				</div>
-				<!-- END SIDEBAR -->
-	    	</div>
-	        <div class="col-md-9 right-column">
+		<div class="col-md-9 left-column">
 	        	<div class="panel">
 		        	<ul class="discussions">
 		        		@foreach($discussions as $discussion)
@@ -124,6 +114,19 @@
 	        	</div>
 
 	        </div>
+
+	    	<div class="col-md-3 left-column">
+	    		<!-- SIDEBAR -->
+	    		<div class="chatter_sidebar">
+					<button class="btn btn-primary" id="new_discussion_btn"><i class="chatter-new"></i> @lang('chatter::messages.discussion.new')</button>	
+					<!--<a href="{{ url('evenement/create') }}"><button class="btn btn-primary" id="new_discussion_btn"><i class="chatter-new"></i> Evénement</button></a>-->						
+					<!--<a href="{{ url('photo/create') }}"><button class="btn btn-primary" id="new_discussion_btn"><i class="chatter-new"></i> Photo</button></a>-->
+					<a href="/{{ Config::get('chatter.routes.home') }}"><i class="chatter-bubble"></i> @lang('chatter::messages.discussion.all')</a>
+          {!! $categoriesMenu !!}
+				</div>
+				<!-- END SIDEBAR -->
+	    	</div>
+
 	    </div>
 	</div>
 
