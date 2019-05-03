@@ -33,7 +33,14 @@ class HomeController extends Controller
     public function gestion()
     {
         $user = Auth::user();
-        var_dump($user);
-        return view('admin');
+        if($user->admin == 1)
+        {
+            return view('admin');
+        }
+        else
+        {
+            return view('home');
+        }
+        
     }
 }
